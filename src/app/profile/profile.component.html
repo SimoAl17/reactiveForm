@@ -1,0 +1,44 @@
+<div>
+    <form class="formContainer" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <label for="username">Username: </label>
+        <input id="username" type="text" formControlName="username">
+  
+        <label for="passrd">Password: </label>
+        <input id="password" type="text" formControlName="passrd">
+    
+        <label for="first-name">First Name: </label>
+        <input id="first-name" type="text" formControlName="firstName">
+    
+        <label for="last-name">Last Name: </label>
+        <input id="last-name" type="text" formControlName="lastName">
+    
+        <label for="mail">Email Address: </label>
+        <input id="mail" type="text" formControlName="mail">
+    
+        <label for="phone">Phone: </label>
+        <input id="phone" type="text" formControlName="phone">
+    
+        <label for="gender">Gender: </label>
+        <select multiple formControlName="gender">
+            <option *ngFor="let gender of genders" [ngValue]="gender">
+            {{ gender.gend }}
+            </option>
+        </select> 
+        <button type="submit" >Submit</button>
+  
+    </form>
+
+    
+</div>
+
+<div>
+    <h1>Informazioni salvate:</h1>
+    <p>Username: {{this.profileForm.value.username}}</p>
+    <p>Password: {{this.profileForm.value.passrd}</p>
+    <p>First Name: {{this.profileForm.value.firstName}}</p>
+    <p>Last Name: {{this.profileForm.value.lastName}</p>
+    <p>Email Address: {{this.profileForm.value.mail}}</p>
+    <p>Phone: {{this.profileForm.value.phone}}</p>
+    <p>Gender: {{this.profileForm.value.gender}</p>
+</div>
